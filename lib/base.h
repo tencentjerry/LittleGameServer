@@ -7,3 +7,4 @@
 #include <vector>
 #include <set>
 #include <memory>
+#include <assert.h>
