@@ -1,0 +1,37 @@
+#CMake 最低版本要求
+
+cmake_minimum_required(VERSION 2.8)
+
+project(gamesvr)
+
+SET(CMAKE_C_COMPILER g++)
+SET(SLN_ROOT ${CMAKE_CURRENT_SOURCE_DIR}/../)
+SET(OUTPUT_PATH ${SLN_ROOT}/bin)
+SET(TARGET_TYPE bin)
+SET(TARGET_NAME gamesvr)
+
+MESSAGE(status "${SLN_ROOT}")
+
+aux_source_directory(../lib LIB_SRC)
+
+aux_source_directory(. SRC)
+
+SET(BASE_DEF "-g -std=c++11 -m64 ")
+
+ADD_DEFINITIONS(${BASE_DEF})
+
+SET(CMAKE_CXX_FLAGS ${CMAKE_CXX_FLAGS} ${BASE_DEF})
+
+SET(DEP_INCLUDE_PATH "${SLN_ROOT}/lib")
+
+SET(GAME_SRC 
+${GAME_SRC} 
+${LIB_SRC}   
+${SRC})
+
+MESSAGE(status "${GAME_SRC}")
+MESSAGE(status "${PROJECT_SOURCE_DIR}")
+INCLUDE_DIRECTORIES(${DEP_INCLUDE_PATH})
+SET(EXECUTABLE_OUTPUT_PATH ${OUTPUT_PATH})
+ADD_EXECUTABLE(${TARGET_NAME} ${GAME_SRC})
+
