@@ -8,3 +8,6 @@
 #include <set>
 #include <memory>
 #include <assert.h>
+#include <string>
+#include "Logger.h"
+#include "ErrorCode.h"

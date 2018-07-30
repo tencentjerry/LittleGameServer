@@ -1,1 +1,0 @@
-/usr/bin/c++   -g -std=c++11 -m64  -Wl,-search_paths_first -Wl,-headerpad_max_install_names  CMakeFiles/gamesvr.dir/Users/Jerryliang/ServerTrunk/lib/Buffer.cpp.o CMakeFiles/gamesvr.dir/main.cpp.o  -o /Users/Jerryliang/ServerTrunk/bin/gamesvr  
